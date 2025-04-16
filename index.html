@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima Extremo | Aplicación Meteorológica</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Clima Extremo</h1>
+            <p class="app-tagline">Pronósticos precisos con efectos visuales impactantes</p>
+        </header>
+
+        <main class="weather-app">
+            <section class="search-section">
+                <div class="search-container">
+                    <input type="text" id="city-input" placeholder="Ej: Madrid, Buenos Aires, Tokyo..." class="search-input">
+                    <button id="search-btn" class="search-button">Buscar</button>
+                    <button id="locate-btn" class="locate-button" title="Usar mi ubicación">📍</button>
+                </div>
+            </section>
+
+            <section class="weather-display">
+                <div class="location-info">
+                    <h2 id="location" class="location-name">Ciudad no seleccionada</h2>
+                    <div id="datetime" class="current-datetime">--/--/---- --:-- --</div>
+                </div>
+
+                <div class="weather-main">
+                    <div class="temperature-container">
+                        <div id="temperature" class="temperature-value">--°</div>
+                        <div class="feels-like">Sensación: <span id="feels-like">--°</span></div>
+                    </div>
+                    <div class="weather-icon-container">
+                        <div id="weather-icon" class="weather-icon">🌤️</div>
+                        <div id="conditions" class="weather-description">Busca una ciudad para ver el clima</div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <div class="detail-icon">💧</div>
+                        <div class="detail-value" id="humidity">--%</div>
+                        <div class="detail-label">Humedad</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">🌬️</div>
+                        <div class="detail-value" id="wind">-- km/h</div>
+                        <div class="detail-label">Viento</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">⏱️</div>
+                        <div class="detail-value" id="pressure">-- hPa</div>
+                        <div class="detail-label">Presión</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="weather-extras">
+                <div class="extra-card">
+                    <h3>Recomendación</h3>
+                    <p id="recommendation">Busca una ciudad para obtener recomendaciones</p>
+                </div>
+                <div class="extra-card">
+                    <h3>Próximas Horas</h3>
+                    <div id="hourly-forecast" class="hourly-container"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>© 2025 Clima Extremo | Datos proporcionados por Tomorrow.io</p>
+        </footer>
+    </div>
+
+    <!-- Elementos para efectos visuales -->
+    <canvas id="weather-canvas"></canvas>
+    <div id="particles-js"></div>
+    
+    <!-- Audio para efectos sonoros -->
+    <audio id="weather-sound" loop></audio>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
